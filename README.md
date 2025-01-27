@@ -1,251 +1,137 @@
-### **Website and Mobile App Overview**
-
-The platform consists of two main components:
-1. **Website**:  Contains Information about CarePass ,Frequently asked question, Contact Information, registration, eligibility checks, application submission, and admin management.
-
-2. **Mobile App**: Used for booking caregivers, viewing caregiver profiles, and managing bookings (after registration and eligibility checks are completed on the website).
+The system to include **two mobile apps** (one for **service users**, one for **caregivers**) and a **website-based admin dashboard**. Below is breakdown of the scope, features, and workflows.
 
 ---
 
-### **How It Works**
+### **System Overview**
+1. **Website** (Admin Dashboard):
+   - Used by admins to manage users, approve bookings, and communicate with caregivers/service users.
+   - No app needed for admins.
 
-#### **Step 1: User Registration**
-- **User Story**: 
+2. **Service User App**:
+   - For service users (e.g., elders or families) to book caregivers, view bookings, and chat with caregivers **after admin approval**.
 
-  - A new user visits the website and creates an account by providing their name, email, and password.
-
-  - They verify their email to activate the account.
-
-- **Admin Story**: 
-  - Admins can view registered users in the admin dashboard.
-
-#### **Step 2: Eligibility Check**
-- **User Story**:
-
-  - After logging in, the user is guided through a series of questions to determine if they are eligible for the service.
-
-  - If eligible, they proceed to the next step. If not, they are informed they do not qualify.
-
-- **Admin Story**:
-
-  - Admins can view the results of eligibility checks in the dashboard.
-
-#### **Step 3: Application Submission**
-
-- **User Story**:
-
-  - Eligible users fill out an application form that collects their preferences and needs (e.g., type of care, location, schedule, medical requirements).
-
-  - They submit the application for review.
-
-- **Admin Story**:
-
-  - Admins receive the application and review the user’s preferences and needs.
-
-#### **Step 4: Admin Review and Matching**
-- **Admin Story**:
-
-  - Admins manually review the application and match the user with a list of suitable caregivers based on their preferences.
-  - The list of matched caregivers is sent to the user.
-- **User Story**:
-  - The user receives a notification that they have been matched with caregivers and their profiles. So they login and review.
-
-#### **Step 5: Booking a Caregiver**
-- **User Story**:
-  - The user logs into the **mobile app** (or website) to view the list of matched caregivers.
-  - They can view caregiver profiles, availability, and reviews.
-  - They select a caregiver and book an appointment.
-  - They can also view their booking history and manage upcoming appointments.
-- **Admin Story**:
-  - Admins can view all bookings and manage caregiver availability in the dashboard.
+3. **Caregiver App**:
+   - For caregivers to manage bookings, chat with service users **after approval**, and communicate with Carepass (admin team).
 
 ---
 
-### **Knowledge Section**
-- The website will include a **Knowledge Section** where users can access articles, guides, and FAQs about caregiving, elder care, and related topics.
-- This section is accessible to all users (registered and non-registered).
+### **Key Features**
+
+#### **1. Service User App**  
+- **Registration/Login**:  
+  - Users must register and complete eligibility checks **via the website first** (no registration in the app).  
+- **Booking Management**:  
+  - View/administer current and past bookings.  
+- **Chat with Caregivers**:  
+  - Chat with caregivers **only after a booking is approved by the admin**.  
+- **Knowledge Section**:  
+  - Access articles, guides, and FAQs.  
+- **Notifications**:  
+  - Receive updates about bookings, messages, and approvals.  
+- **Caregiver Profiles**:  
+  - View profiles of matched caregivers (skills, reviews, availability).  
 
 ---
 
-### **Mobile App Features**
-The mobile app is designed for users who have already completed registration, eligibility checks, and application submission on the website. It includes:
-1. **Booking**:
-   - Users can book caregivers from the list provided by the admin.
-2. **Caregiver Profiles**:
-   - Users can view detailed profiles of matched caregivers, including skills, experience, availability, and reviews.
-3. **Booking History**:
-   - Users can see a history of their past and upcoming bookings.
-4. **Notifications**:
-   - Users receive notifications about booking confirmations, reminders, and updates.
+#### **2. Caregiver App**  
+- **Registration/Login**:  
+  - Caregivers register **via the website** and are approved by the admin.  
+- **Booking Management**:  
+  - View upcoming/past bookings and schedules.  
+- **Chat Features**:  
+  - **Tab 1**: Chat with Carepass (admin team) for support or inquiries.  
+  - **Tab 2**: Chat with service users **only after a booking is approved**.  
+- **Knowledge Section**:  
+  - Access training materials, policies, and FAQs.  
+- **Notifications**:  
+  - Alerts for new bookings, messages, or schedule changes.  
+- **Profile Management**:  
+  - Update availability, skills, and personal details.  
 
 ---
 
-### **User Stories**
-1. **As a new user**, I want to register on the website so that I can access caregiving services.
-2. **As a registered user**, I want to complete an eligibility check so that I can determine if I qualify for the service.
-3. **As an eligible user**, I want to submit an application with my preferences so that the admin can match me with suitable caregivers.
-4. **As a user**, I want to receive a list of matched caregivers so that I can choose the best one for my needs.
-5. **As a user**, I want to book a caregiver through the mobile app so that I can manage my appointments easily.
-6. **As a user**, I want to view my booking history and caregiver profiles so that I can keep track of my caregiving services.
+#### **3. Admin Dashboard (Website)**  
+- **User Management**:  
+  - Approve/reject caregivers and service users.  
+- **Booking Approval**:  
+  - Review and approve bookings before caregivers and users can communicate.  
+- **Chat with All Parties**:  
+  - Communicate with caregivers and service users directly via the dashboard.  
+- **Knowledge Section Management**:  
+  - Upload/edit articles and guides for both apps.  
+- **Reporting**:  
+  - Track bookings, user activity, and caregiver performance.  
 
 ---
 
-### **Admin Stories**
-1. **As an admin**, I want to view registered users and their eligibility status so that I can manage applications.
-2. **As an admin**, I want to review user applications and match them with suitable caregivers so that users can book appointments.
-3. **As an admin**, I want to manage caregiver profiles and availability so that users have accurate information.
-4. **As an admin**, I want to view all bookings and generate reports so that I can monitor the platform’s performance.
+### **Communication Rules**  
+1. **Caregiver ↔ Service User**:  
+   - Allowed **only after the admin approves a booking**.  
+   - Chat is tied to the specific booking.  
+2. **Caregiver ↔ Carepass (Admin)**:  
+   - Allowed **at any time** via the caregiver app.  
+3. **Service User ↔ Carepass (Admin)**:  
+   - Allowed **at any time** via the service user app.  
+4. **Group Chats**:  
+   - Admins can create group chats (e.g., caregiver + user + admin) for coordination.  
 
 ---
 
-### **Key Features Summary**
-#### **Website**:
-1. User registration and login.
-2. Eligibility check (questionnaire).
-3. Application submission (preferences and needs).
-4. Knowledge section (articles, guides, FAQs).
-5. Admin dashboard for managing users, applications, and caregivers.
+### **Simplified Process Flow**  
 
-#### **Mobile App**:
-1. View matched caregivers and their profiles.
-2. Book caregivers and manage appointments.
-3. View booking history.
-4. Receive notifications about bookings.
+#### **For Service Users**  
+1. **Register and complete eligibility checks** on the website.  
+2. **Submit application** with preferences (via website).  
+3. **Admin matches caregivers** and approves the booking.  
+4. **Use the app** to:  
+   - Book approved caregivers.  
+   - Chat with caregivers **after approval**.  
+   - View booking history and caregiver profiles.  
 
 ---
 
-### **Simplified Process Flow**
-1. **User registers** on the website.
-2. **User completes eligibility check** on the website.
-3. **User submits application** with preferences on the website.
-4. **Admin reviews application** and matches caregivers.
-5. **User receives list of matched caregivers**.
-6. **User books a caregiver** through the website or mobile app.
-7. **User manages bookings** and views history on website or the mobile app.
-
----### **Website and Mobile App Overview**
-
-The platform consists of two main components:
-1. **Website**:  Contains Information about CarePass ,Frequently asked question, Contact Information, registration, eligibility checks, application submission, and admin management.
-
-2. **Mobile App**: Used for booking caregivers, viewing caregiver profiles, and managing bookings (after registration and eligibility checks are completed on the website).
+#### **For Caregivers**  
+1. **Register and get approved** via the website.  
+2. **Use the app** to:  
+   - View/manage bookings and schedules.  
+   - Chat with Carepass (admin) **anytime**.  
+   - Chat with service users **only after booking approval**.  
+   - Access training materials in the Knowledge Section.  
 
 ---
 
-### **How It Works**
-
-#### **Step 1: User Registration**
-- **User Story**: 
-
-  - A new user visits the website and creates an account by providing their name, email, and password.
-
-  - They verify their email to activate the account.
-
-- **Admin Story**: 
-  - Admins can view registered users in the admin dashboard.
-
-#### **Step 2: Eligibility Check**
-- **User Story**:
-
-  - After logging in, the user is guided through a series of questions to determine if they are eligible for the service.
-
-  - If eligible, they proceed to the next step. If not, they are informed they do not qualify.
-
-- **Admin Story**:
-
-  - Admins can view the results of eligibility checks in the dashboard.
-
-#### **Step 3: Application Submission**
-
-- **User Story**:
-
-  - Eligible users fill out an application form that collects their preferences and needs (e.g., type of care, location, schedule, medical requirements).
-
-  - They submit the application for review.
-
-- **Admin Story**:
-
-  - Admins receive the application and review the user’s preferences and needs.
-
-#### **Step 4: Admin Review and Matching**
-- **Admin Story**:
-
-  - Admins manually review the application and match the user with a list of suitable caregivers based on their preferences.
-  - The list of matched caregivers is sent to the user.
-- **User Story**:
-  - The user receives a notification that they have been matched with caregivers and their profiles. So they login and review.
-
-#### **Step 5: Booking a Caregiver**
-- **User Story**:
-  - The user logs into the **mobile app** (or website) to view the list of matched caregivers.
-  - They can view caregiver profiles, availability, and reviews.
-  - They select a caregiver and book an appointment.
-  - They can also view their booking history and manage upcoming appointments.
-- **Admin Story**:
-  - Admins can view all bookings and manage caregiver availability in the dashboard.
+#### **For Admins**  
+1. **Manage users** (approve/reject caregivers and service users).  
+2. **Review and approve bookings** to enable caregiver-user communication.  
+3. **Monitor chats** between caregivers and users via the dashboard.  
+4. **Update Knowledge Section** content for both apps.  
 
 ---
 
-### **Knowledge Section**
-- The website will include a **Knowledge Section** where users can access articles, guides, and FAQs about caregiving, elder care, and related topics.
-- This section is accessible to all users (registered and non-registered).
+### **User Stories**  
+
+#### **Service User Stories**  
+1. “I want to book a caregiver approved by the admin and chat with them securely.”  
+2. “I need to see my upcoming bookings and message Carepass for support.”  
+3. “I want to read guides about care in the Knowledge Section.”  
+
+#### **Caregiver Stories**  
+1. “I want to view my schedule and chat with users only after bookings are approved.”  
+2. “I need to contact Carepass (admin) for urgent help via the app.”  
+3. “I want to update my availability and access training materials.”  
+
+#### **Admin Stories**  
+1. “I need to approve bookings before users and caregivers can communicate.”  
+2. “I want to monitor all chats to ensure compliance and safety.”  
+3. “I need to update the Knowledge Section with new policies.”  
 
 ---
 
-### **Mobile App Features**
-The mobile app is designed for users who have already completed registration, eligibility checks, and application submission on the website. It includes:
-1. **Booking**:
-   - Users can book caregivers from the list provided by the admin.
-2. **Caregiver Profiles**:
-   - Users can view detailed profiles of matched caregivers, including skills, experience, availability, and reviews.
-3. **Booking History**:
-   - Users can see a history of their past and upcoming bookings.
-4. **Notifications**:
-   - Users receive notifications about booking confirmations, reminders, and updates.
-
----
-
-### **User Stories**
-1. **As a new user**, I want to register on the website so that I can access caregiving services.
-2. **As a registered user**, I want to complete an eligibility check so that I can determine if I qualify for the service.
-3. **As an eligible user**, I want to submit an application with my preferences so that the admin can match me with suitable caregivers.
-4. **As a user**, I want to receive a list of matched caregivers so that I can choose the best one for my needs.
-5. **As a user**, I want to book a caregiver through the mobile app so that I can manage my appointments easily.
-6. **As a user**, I want to view my booking history and caregiver profiles so that I can keep track of my caregiving services.
-
----
-
-### **Admin Stories**
-1. **As an admin**, I want to view registered users and their eligibility status so that I can manage applications.
-2. **As an admin**, I want to review user applications and match them with suitable caregivers so that users can book appointments.
-3. **As an admin**, I want to manage caregiver profiles and availability so that users have accurate information.
-4. **As an admin**, I want to view all bookings and generate reports so that I can monitor the platform’s performance.
-
----
-
-### **Key Features Summary**
-#### **Website**:
-1. User registration and login.
-2. Eligibility check (questionnaire).
-3. Application submission (preferences and needs).
-4. Knowledge section (articles, guides, FAQs).
-5. Admin dashboard for managing users, applications, and caregivers.
-
-#### **Mobile App**:
-1. View matched caregivers and their profiles.
-2. Book caregivers and manage appointments.
-3. View booking history.
-4. Receive notifications about bookings.
-
----
-
-### **Simplified Process Flow**
-1. **User registers** on the website.
-2. **User completes eligibility check** on the website.
-3. **User submits application** with preferences on the website.
-4. **Admin reviews application** and matches caregivers.
-5. **User receives list of matched caregivers**.
-6. **User books a caregiver** through the website or mobile app.
-7. **User manages bookings** and views history on website or the mobile app.
+### **Key Features Summary**  
+| **Component**       | **Features**                                                                 |
+|----------------------|-----------------------------------------------------------------------------|
+| **Service User App** | Booking management, caregiver profiles, chat (post-approval), Knowledge Section. |
+| **Caregiver App**    | Schedule management, chat with Carepass/users (post-approval), Knowledge Section. |
+| **Admin Dashboard**  | User/booking approval, chat with all parties, Knowledge Section management. |
 
 ---
